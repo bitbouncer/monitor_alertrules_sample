@@ -2,7 +2,7 @@ groups:
 - name: example
   rules:
   - alert: HighMemLoad
-    expr: ((system_mem_free+system_mem_cached+system_mem_buffered)/system_mem_total)*100 > 30
+    expr: 100 - ((system_mem_free+system_mem_cached+system_mem_buffered)/system_mem_total)*100 > 70
     for: 1m
     labels:
       severity: page
